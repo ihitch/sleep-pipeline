@@ -5,7 +5,7 @@ params.pcm = "medium-priority-np"
 params.memory = "0.5 GB"
 params.cpus = 0.1
 
-process sleep {
+process go_sleep {
     pod priorityClassName: "${params.pcm}"
     memory "${params.memory}"
     cpus ${params.cpus}
@@ -17,5 +17,5 @@ process sleep {
 }
 
 workflow {
-    sleep()
+    go_sleep()
 }
